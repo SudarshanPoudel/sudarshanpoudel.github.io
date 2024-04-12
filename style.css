@@ -6,6 +6,7 @@
   --main-color-light: #9531f9;
   --main-color-dark: #58149d;
   --text-color: #fff;
+  --form-color: #eaeaea;
 }
 i {
   background: none;
@@ -19,10 +20,13 @@ i {
   font-weight: 600;
   color: var(--text-color);
   transition: 0.2s ease;
+  scroll-behavior: smooth;
+  outline: none;
 }
 
 body {
   background-color: var(--main-bg-color);
+  scrollbar-color: var(--main-color);
 }
 
 a {
@@ -38,6 +42,8 @@ a {
 .nav-wrapper {
   background-color: var(--main-bg-color);
   position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .nav-wrapper .nav-content {
@@ -99,6 +105,9 @@ a {
 }
 
 .hire-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 5vh;
   border: none;
@@ -200,7 +209,11 @@ a {
 }
 
 #home-page::after,
-#home-page-container::after {
+#home-page-container::after,
+#skills-section::after,
+.skills::after,
+#projects-section::after,
+#contact-me-section::after {
   content: " ";
   width: 40vw;
   height: 40vw;
@@ -212,12 +225,19 @@ a {
   z-index: -1;
 }
 
-#home-page::after {
+#home-page::after,
+.skills::after {
   top: 0;
   left: 0;
 }
+#contact-me-section::after {
+  top: 0;
+  left: 25%;
+}
 
-#home-page-container::after {
+#home-page-container::after,
+#skills-section::after,
+#projects-section::after {
   right: 0;
   bottom: 0;
 }
@@ -233,8 +253,8 @@ a {
   height: 70vh;
   width: 70vh;
   position: absolute;
-  top: 15%;
-  right: 10%;
+  top: 10vh;
+  right: 10vw;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -320,4 +340,411 @@ a {
   .my-intro h2 {
     font-size: 1.8rem;
   }
+}
+
+.section-heading {
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  color: var(--main-color);
+  font-size: 2rem;
+  padding: 0 20px;
+  margin: 20px;
+  text-align: center;
+  border-bottom: 5px solid var(--main-color);
+}
+
+/* About Me Section */
+#about-me-section {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  width: 90vw;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+#about-me-section .section-heading {
+  margin: 0px;
+}
+
+.about-me-img {
+  height: 50vh;
+  width: 50vh;
+  overflow: none;
+  margin-right: 10%;
+  border: 2px solid var(--main-color);
+}
+
+.about-me-img img {
+  height: 100%;
+}
+
+.about-me-img-mobile {
+  display: none;
+}
+
+#about-me-section .about-me-para {
+  text-align: justify;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 20px auto;
+}
+
+@media (max-width: 760px) {
+  .about-me-img {
+    display: none;
+  }
+  .about-me-img-mobile {
+    display: block;
+    height: 80vw;
+    width: 80vw;
+    overflow: hidden;
+    margin: 10px auto;
+    border: 3px solid var(--main-color);
+  }
+
+  .about-me-img-mobile img {
+    width: 100%;
+  }
+
+  #about-me-section .about-me-para {
+    font-size: 1rem;
+  }
+}
+
+/* Skills Section */
+#skills-section {
+  text-align: center;
+  position: relative;
+  padding-top: 10vh;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.skills-type-box {
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10vh 0;
+}
+
+.skill-type-item {
+  width: 51%;
+  height: 8vh;
+  background: none;
+  margin: 10px auto;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid var(--text-color);
+  cursor: pointer;
+}
+
+.skill-type-item i {
+  margin-right: 10px;
+  transition: 0s;
+}
+
+.skill-type-item.active-skill {
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+}
+
+.skill-type-item:hover {
+  background-color: var(--main-color-light);
+  border: 2px solid var(--main-color-light);
+}
+
+.skills-details-box {
+  height: 50vh;
+  width: 40vw;
+  background-color: var(--text-color);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+.skills-details-box .skills-detail-item {
+  width: 45%;
+  position: relative;
+  display: flex;
+  height: 25%;
+}
+
+.skill-name {
+  color: var(--main-bg-color);
+  position: absolute;
+  top: 25%;
+  height: 25%;
+}
+
+.skill-bar {
+  width: 80%;
+  height: 10%;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 20%;
+  z-index: 1;
+}
+
+.progress {
+  position: absolute;
+  bottom: 40%;
+  padding: 10% auto;
+  width: 20%;
+  left: 70%;
+  background-color: var(--main-color);
+}
+
+.bar {
+  width: 100%;
+  height: 10%;
+  background-color: #8b8b8b;
+  position: absolute;
+  bottom: 20%;
+}
+
+/* Projects Section */
+#projects-section {
+  text-align: center;
+  margin-bottom: 10vh;
+  padding: 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 4vw;
+}
+
+.project-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.project-wrapper i {
+  height: 50px;
+  width: 50px;
+  background-color: var(--text-color);
+  color: var(--main-bg-color);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.project-wrapper i:first-child {
+  left: -25px;
+}
+
+.project-wrapper i:last-child {
+  right: -25px;
+}
+
+.projects-grid {
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.project-item {
+  width: 30vw;
+  height: 30vw;
+  border: 3px solid var(--main-color);
+  margin-bottom: 2vw;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-image {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image img {
+  height: 100%;
+}
+.project-bg-blur {
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(to top, #000000ee 40%, transparent);
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.project-details {
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 1;
+}
+
+.project-details h2 {
+  font-size: 2rem;
+}
+
+.project-view-more {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.project-item:hover .project-image img {
+  transform: scale(110%);
+}
+.project-item:hover .project-view-more {
+  opacity: 0.8;
+}
+
+.more-projects {
+  padding: 1rem 4rem;
+  background-color: var(--main-color);
+  border-radius: 2px;
+}
+
+/* Contact me section */
+
+#contact-me-section {
+  padding: 15vh 0 5vh 0;
+  text-align: center;
+  position: relative;
+}
+
+#contact-me-section .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contacts {
+  width: 20vw;
+  display: inline;
+  text-align: left;
+}
+
+.contacts .contact {
+  height: 20%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.contacts .contact:hover {
+  color: var(--main-color);
+}
+
+.contact i {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: inherit;
+  transition: 0s;
+}
+
+.contact-me-form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-me-form input {
+  width: 44%;
+  height: 40px;
+  background-color: var(--form-color);
+  border: none;
+  margin: 0 1%;
+  padding: 10px;
+  color: #000;
+}
+
+.contact-me-form textarea {
+  background-color: var(--form-color);
+  border: none;
+  resize: none;
+  width: 91%;
+  margin: 10px auto;
+  height: 200px;
+  padding: 10px;
+  color: #000;
+}
+
+.contact-me-form button {
+  width: 250px;
+  height: 50px;
+  margin: 10px auto;
+  background-color: var(--main-color);
+  border: none;
+  cursor: pointer;
+}
+
+.contact-me-form button:hover {
+  background-color: var(--main-color-hover);
+}
+
+#footer-section {
+  background-color: var(--form-color);
+  width: 100vw;
+  height: 50px;
+  margin-top: 200px;
+  color: #696969;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: 300;
+}
+
+.thank-you-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--main-color);
+}
+
+.thank-you-page h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.thank-you-page a {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: 20px;
+  background-color: var(--main-color);
+  padding: 10px 50px;
 }
