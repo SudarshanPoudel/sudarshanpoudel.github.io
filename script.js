@@ -35,10 +35,9 @@ menuItems.forEach((e) => {
 const wrapper = document.querySelector(".project-wrapper");
 const carousel = document.querySelector(".projects-grid");
 const firstCardWidth =
-  parseInt(carousel.querySelector(".project-item").offsetWidth) + 24;
+  parseInt(carousel.querySelector(".project-item").offsetWidth) + 16;
 const arrowBtns = document.querySelectorAll(".project-wrapper i");
 const carouselChildrens = [...carousel.children];
-console.log(firstCardWidth);
 
 let isDragging = false,
   startX,
