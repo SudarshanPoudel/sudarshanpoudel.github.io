@@ -131,7 +131,7 @@ a {
 }
 
 .mobile-nav {
-  position: absolute;
+  position: fixed;
   left: -60vw;
   top: 0;
   height: 100vh;
@@ -170,7 +170,7 @@ a {
 .black-bg {
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #000;
@@ -398,8 +398,8 @@ a {
   }
   .about-me-img-mobile {
     display: block;
-    height: 80vw;
-    width: 80vw;
+    height: 60vw;
+    width: 60vw;
     overflow: hidden;
     margin: 10px auto;
     border: 3px solid var(--main-color);
@@ -516,6 +516,30 @@ a {
   bottom: 20%;
 }
 
+@media (max-width: 760px) {
+  #skills-section {
+    padding-top: 4vh;
+  }
+
+  .skills {
+    margin-top: 0px;
+    flex-direction: column;
+  }
+
+  .skills-type-box {
+    width: 95vw;
+    margin: 0;
+  }
+
+  .skill-type-item {
+    width: 47%;
+  }
+
+  .skills-details-box {
+    width: 95vw;
+  }
+}
+
 /* Projects Section */
 #projects-section {
   text-align: center;
@@ -558,7 +582,6 @@ a {
 
 .projects-grid {
   display: grid;
-  justify-content: center;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3) - 12px);
   gap: 16px;
@@ -637,6 +660,41 @@ a {
   border-radius: 2px;
 }
 
+@media (max-width: 760px) {
+  #projects-section {
+    margin-bottom: 2vh;
+    padding: 10vh 10vw;
+  }
+
+  .projects-grid {
+    grid-auto-columns: 100%;
+  }
+
+  .project-item {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .project-details {
+    position: absolute;
+    bottom: 5%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    z-index: 1;
+  }
+
+  .project-details h2 {
+    font-size: 2rem;
+  }
+
+  .more-projects {
+    padding: 0.5rem 2rem;
+    margin-top: 20px;
+  }
+}
+
 /* Contact me section */
 
 #contact-me-section {
@@ -711,7 +769,7 @@ a {
 }
 
 .contact-me-form button:hover {
-  background-color: var(--main-color-hover);
+  background-color: var(--main-color-light);
 }
 
 #footer-section {
@@ -725,6 +783,47 @@ a {
   padding-left: 10px;
   font-weight: 300;
 }
+
+@media (max-width: 760px) {
+  #contact-me-section {
+    padding-top: 5vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  #contact-me-section .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contacts {
+    width: 90vw;
+    margin-left: 5vw;
+  }
+
+  .contacts .contact {
+    height: 50px;
+  }
+
+  .contact-me-form {
+    width: 95vw;
+    margin-left: 0;
+    margin-top: 5vh;
+  }
+
+  .contact-me-form input {
+    width: 90%;
+    height: 40px;
+    margin: 1% 0;
+  }
+
+  #footer-section {
+    font-size: 0.8rem;
+    width: 100vw;
+  }
+}
+
+/* Thank You page */
 
 .thank-you-page {
   display: flex;
