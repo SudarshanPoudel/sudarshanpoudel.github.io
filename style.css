@@ -22,6 +22,7 @@ i {
   transition: 0.2s ease;
   scroll-behavior: smooth;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -489,6 +490,8 @@ a {
   top: 25%;
   height: 25%;
   animation: skill-name 0.4s ease-in-out forwards;
+  width: max-content;
+  text-align: left;
 }
 @keyframes skill-name {
   0% {

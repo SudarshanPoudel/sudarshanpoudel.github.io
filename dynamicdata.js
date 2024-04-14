@@ -33,7 +33,7 @@ let allSkills = [
     ],
   },
   {
-    title: "Web Development",
+    title: "Web",
     icon: '<i class="fa-solid fa-code"></i>',
     isActive: false,
     skills: [
@@ -77,7 +77,7 @@ let allSkills = [
         progress: 60,
       },
       {
-        name: "Regression and Classification",
+        name: "Regression",
         progress: 80,
       },
       {
