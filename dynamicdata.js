@@ -127,48 +127,121 @@ let allSkills = [
   },
 ];
 
-// Display Skills
-let skillsTypeBox = document.querySelector(".skills-type-box");
-let skillDetailBox = document.querySelector(".skills-details-box");
+let allProjects = [
+  {
+    id: 1,
+    name: "Screen Score",
+    intro: "Complete Frontend Movie Website",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    desc: "Screenscore is a sleek, responsive frontend project designed for movie enthusiasts. It utilizes the TMDB API to fetch real-time movie data, offering users a feature-rich platform to explore and manage their favorite films.",
+    features: [
+      "Optimized for all devices with a focus on great UI/UX.",
+      "Always updated with the latest movies and data from TMDB.",
+      "Easily search for movies by name and use filters like genre, ratings, and release date to find the perfect movie.",
+      "Add movies to a personalized favorites list for quick access.",
+      "Sort movie reviews by time or up votes to see what's most relevant.",
+      "Get suggestions based on ratings, popularity, and new releases.",
+      "Choose from multiple themes to personalize the browsing experience.",
+    ],
+    links: [
+      {
+        title: "View Code",
+        logo: '<i class="fa-brands fa-github"></i>',
+        url: "https://github.com/SudarshanPoudel/ScreenScore",
+      },
+      {
+        title: "Live Demo",
+        logo: '<i class="fa-solid fa-laptop"></i>',
+        url: "https://sudarshanpoudel.github.io/ScreenScore/Html/homepage.html",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Comments analyzer",
+    intro: "Youtube comments analysis Tool",
+    tech: ["Python", "Pandas", "Matplotlib", "Streamlit"],
+    desc: `
+    Comments analyzer is a data visualization project designed for youtubers or general audience
+    who wants to extract and visualize incites of comment section from any youtube video.
+    It utilizes the google API to fetch real-time data and perform data preprocessing and visualization
+    with clean UI created using streamlit`,
 
-displaySkills();
-function displaySkills() {
-  skillsTypeBox.innerHTML = "";
+    features: [
+      "Fetch all youtube comments using google API",
+      "Display nordcloud for whole comment section",
+      "Display top 20 most repeated words",
+      "Display timeline of comment section",
+    ],
+    links: [
+      {
+        title: "View Code",
+        logo: '<i class="fa-brands fa-github"></i>',
+        url: "https://github.com/SudarshanPoudel/YT_Comments_Analysis/",
+      },
+      {
+        title: "Live Demo",
+        logo: '<i class="fa-solid fa-laptop"></i>',
+        url: "https://sudarshanpoudel-yt-comments-analysis-streamlitappapp-whf95s.streamlit.app/",
+      },
+    ],
+  },
+  {
+    id: 1,
+    name: "Screen Score",
+    intro: "Complete Frontend Movie Website",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    desc: "Screenscore is a sleek, responsive frontend project designed for movie enthusiasts. It utilizes the TMDB API to fetch real-time movie data, offering users a feature-rich platform to explore and manage their favorite films.",
+    features: [
+      "Optimized for all devices with a focus on great UI/UX.",
+      "Always updated with the latest movies and data from TMDB.",
+      "Easily search for movies by name and use filters like genre, ratings, and release date to find the perfect movie.",
+      "Add movies to a personalized favorites list for quick access.",
+      "Sort movie reviews by time or up votes to see what's most relevant.",
+      "Get suggestions based on ratings, popularity, and new releases.",
+      "Choose from multiple themes to personalize the browsing experience.",
+    ],
+    links: [
+      {
+        title: "View Code",
+        logo: '<i class="fa-brands fa-github"></i>',
+        url: "https://github.com/SudarshanPoudel/ScreenScore",
+      },
+      {
+        title: "Live Demo",
+        logo: '<i class="fa-solid fa-laptop"></i>',
+        url: "https://sudarshanpoudel.github.io/ScreenScore/Html/homepage.html",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Comments analyzer",
+    intro: "Youtube comments analysis Tool",
+    tech: ["Python", "Pandas", "Matplotlib", "Streamlit"],
+    desc: `
+    Comments analyzer is a data visualization project designed for youtubers or general audience
+    who wants to extract and visualize incites of comment section from any youtube video.
+    It utilizes the google API to fetch real-time data and perform data preprocessing and visualization
+    with clean UI created using streamlit`,
 
-  allSkills.forEach((s) => {
-    skillBtn = document.createElement("button");
-    skillBtn.className = "skill-type-item";
-    if (s.isActive) {
-      skillBtn.classList.add("active-skill");
-      displaySkillDetails(s.skills);
-    } else {
-      skillBtn.addEventListener("click", () => {
-        allSkills.forEach((s) => {
-          s.isActive = false;
-        });
-        s.isActive = true;
-        displaySkills();
-      });
-    }
-
-    skillBtn.innerHTML = s.icon + s.title;
-    skillsTypeBox.appendChild(skillBtn);
-  });
-}
-
-function displaySkillDetails(skills) {
-  skillDetailBox.innerHTML = "";
-  skills.forEach((s) => {
-    box = document.createElement("div");
-    box.className = "skills-detail-item";
-    box.innerHTML = `
-        <div class="skill-name">${s.name}</div>
-        <div class="bar">
-            <div class="skill-bar"  style="width:${s.progress}%;">
-                <div class="progress">${s.progress}%</div>
-            </div>
-        </div>`;
-
-    skillDetailBox.appendChild(box);
-  });
-}
+    features: [
+      "Fetch all youtube comments using google API",
+      "Display nordcloud for whole comment section",
+      "Display top 20 most repeated words",
+      "Display timeline of comment section",
+    ],
+    links: [
+      {
+        title: "View Code",
+        logo: '<i class="fa-brands fa-github"></i>',
+        url: "https://github.com/SudarshanPoudel/YT_Comments_Analysis/",
+      },
+      {
+        title: "Live Demo",
+        logo: '<i class="fa-solid fa-laptop"></i>',
+        url: "https://sudarshanpoudel-yt-comments-analysis-streamlitappapp-whf95s.streamlit.app/",
+      },
+    ],
+  },
+];

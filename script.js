@@ -73,3 +73,71 @@ const dragStop = () => {
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
+
+
+// Display Skills
+let skillsTypeBox = document.querySelector(".skills-type-box");
+let skillDetailBox = document.querySelector(".skills-details-box");
+
+displaySkills();
+function displaySkills() {
+  skillsTypeBox.innerHTML = "";
+
+  allSkills.forEach((s) => {
+    skillBtn = document.createElement("button");
+    skillBtn.className = "skill-type-item";
+    if (s.isActive) {
+      skillBtn.classList.add("active-skill");
+      displaySkillDetails(s.skills);
+    } else {
+      skillBtn.addEventListener("click", () => {
+        allSkills.forEach((s) => {
+          s.isActive = false;
+        });
+        s.isActive = true;
+        displaySkills();
+      });
+    }
+
+    skillBtn.innerHTML = s.icon + s.title;
+    skillsTypeBox.appendChild(skillBtn);
+  });
+}
+
+function displaySkillDetails(skills) {
+  skillDetailBox.innerHTML = "";
+  skills.forEach((s) => {
+    box = document.createElement("div");
+    box.className = "skills-detail-item";
+    box.innerHTML = `
+        <div class="skill-name">${s.name}</div>
+        <div class="bar">
+            <div class="skill-bar"  style="width:${s.progress}%;">
+                <div class="progress">${s.progress}%</div>
+            </div>
+        </div>`;
+
+    skillDetailBox.appendChild(box);
+  });
+}
+
+let projectGrid = document.querySelector(".projects-grid");
+
+displayProjects();
+function displayProjects() {
+  projectGrid.innerHTML = "";
+  allProjects.forEach((e) => {
+    projectBox = document.createElement("div");
+    projectBox.className = "project-item";
+    projectBox.innerHTML = `
+    <div class="project-image"><img src="Images/project/project-${e.id}.png" alt="${e.name}"></div>
+    <div class="project-details">
+        <h2>${e.name}</h2>
+        <p>"${e.intro}"</p>
+    </div>
+    <div class="project-bg-blur"></div>
+    <a href="project.html?id=${e.id}" class="project-view-more">View More</a>
+    `;
+    projectGrid.appendChild(projectBox);
+  });
+}
