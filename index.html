@@ -230,7 +230,7 @@
                 <a href="https://wa.me/9779867231650" class="contact"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
                 <a href="https://t.me/sudarshan66" class="contact"><i class="fa-brands fa-telegram"></i> Telegram</a>
             </div>
-            <form class="contact-me-form" action="https://formsubmit.co/mailto.supo@gmail.com" method="POST">
+            <form class="contact-me-form" action="https://formsubmit.co/mailto.supo@gmail.com" method="post">
                 <div class="name-mail">
                     <input type="text" name="name" required placeholder="Enter Your Name">
                     <input type="email" name="email" required placeholder="Enter Your Email">
@@ -238,8 +238,7 @@
                 <textarea name="message" id="" placeholder="Message" required></textarea>
                 <button type="submit" value="send">Send message</button>
                 <input type="hidden" name="_captcha" value="false">
-                <input id="thank-you-page" type="hidden" name="_next">
-
+                <input id="thank-you-page" type="hidden" name="_next" value="thanks.html">
             </form>
         </div>
     </div>
@@ -252,5 +251,14 @@
 
 <script src="dynamicdata.js"></script>
 <script src="script.js"></script>
+
+<script>
+
+    const domain = window.location.origin;
+    const thankYouPage = domain + "/thanks.html";
+    console.log(thankYouPage)
+    document.getElementById('thank-you-page').value = thankYouPage;
+    
+</script>
 
 </html>
