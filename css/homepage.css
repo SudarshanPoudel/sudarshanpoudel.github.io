@@ -1,0 +1,169 @@
+#home-page-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+}
+
+#home-page::after,
+#home-page-container::after,
+#skills-section::after,
+.skills::after,
+#projects-section::after,
+#contact-me-section::after {
+    content: " ";
+    width: 40vw;
+    height: 40vw;
+    background: var(--main-color);
+    border-radius: 100%;
+    position: absolute;
+    filter: blur(255px);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+#home-page::after,
+.skills::after {
+    top: 0;
+    left: 0;
+}
+
+#contact-me-section::after {
+    top: 0;
+    left: 25%;
+}
+
+#home-page-container::after,
+#skills-section::after,
+#projects-section::after {
+    right: 0;
+    bottom: 0;
+}
+
+#home-page {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: transparent;
+}
+
+#home-page .image {
+    height: 70vh;
+    width: 70vh;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#home-page .image img {
+    height: 100%;
+}
+
+#home-page .my-intro {
+    margin: 25vh 5vw;
+    z-index: 1;
+    position: relative;
+}
+
+.my-intro h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.my-intro h2 span {
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.my-intro h3 {
+    font-size: 1.2rem;
+}
+
+.my-intro .socials a {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    cursor: pointer;
+}
+
+.my-intro .socials a:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.my-intro .down-cv-btn,
+.my-intro .view-projects-btn {
+    display: inline-block;
+    width: max-content;
+    padding: 10px 45px;
+    margin: 20px 10px 20px 0;
+    border-radius: 2px;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px #000000eb;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.my-intro .down-cv-btn i,
+.my-intro .view-projects-btn i {
+    margin-left: 5px;
+}
+
+
+.view-projects-btn:hover, .down-cv-btn:hover {
+    background-color: var(--main-color-dark);
+}
+
+
+@media (max-width: 940px) {
+
+    #home-page::after,
+    #home-page-container::after {
+        width: 40vh;
+        height: 40vh;
+    }
+
+    #home-page .image {
+        height: 40vh;
+        width: 40vh;
+        top: 2vh;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+
+    #home-page .my-intro {
+        margin: 45vh 0 5vh 5vw;
+    }
+
+    .my-intro h2 {
+        font-size: 1.8rem;
+    }
+    
+    .my-intro .socials a{
+        width: 5vw;
+        height: 5vw;
+        min-width: 30px;
+        min-height: 30px;
+    }
+
+    .my-intro .down-cv-btn,
+    .my-intro .view-projects-btn {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+}
