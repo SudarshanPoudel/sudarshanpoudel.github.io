@@ -131,7 +131,14 @@
 
 
 @media (max-width: 940px) {
+    #home-page-container{
+        height: max-content;
+        padding: 0;
+    }
 
+    #home-page{
+        height: max-content;
+    }
     #home-page::after,
     #home-page-container::after {
         width: 40vh;
@@ -139,19 +146,24 @@
     }
 
     #home-page .image {
-        height: 40vh;
-        width: 40vh;
+        height: 30vh;
+        width: 30vh;
         top: 2vh;
         left: 50%;
         transform: translate(-50%, 0%);
     }
 
     #home-page .my-intro {
-        margin: 45vh 0 5vh 5vw;
+        margin: 35vh 0 5vh 5vw;
     }
 
     .my-intro h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    .my-intro h3{
+        font-size: 1rem;
+        font-weight: 400;
     }
     
     .my-intro .socials a{
@@ -163,7 +175,8 @@
 
     .my-intro .down-cv-btn,
     .my-intro .view-projects-btn {
-        padding-left: 3vw;
-        padding-right: 3vw;
+        padding-left: 2vw;
+        font-size: 0.8rem;
+        padding-right: 2vw;
     }
 }

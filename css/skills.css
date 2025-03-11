@@ -154,7 +154,8 @@
 }
 @media (max-width: 940px) {
   #skills-section {
-    padding-top: 4vh;
+    padding-top: 5vh;
+    min-height: 80vh;
   }
 
   .skills {
@@ -190,16 +191,28 @@
 
   .skills-details-box {
     width: 95vw;
-    height: 70vh;
+    height: 50vh;
+    padding-bottom: 10px;
   }
 
   .skills-details-box .skills-detail-item{
     width: 80%;
-    height: 12%;
+    height: 7%;
   }
 
   .skills-details-box .skill-name{
     width: 100%;
     text-wrap: wrap;
+  }
+  .skill-name{
+    font-size: 0.8rem;
+  }
+  .bar{
+    height: 20%;
+    bottom: 0%;
+  }
+  .skill-percentage-info{
+    bottom: -1rem;
+    font-size: 0.6rem;
   }
 }

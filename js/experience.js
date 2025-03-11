@@ -1,5 +1,14 @@
 let allExperiences = [
     {
+        "title": "GoFuel Works - AI/ML Developer",
+        "date": "Feb 2025 - Current",
+        "tasks": [
+            "Integrating AI powered features in B2B software to improve task efficiency.",
+            "Developed a high accuracy image scanning feature that let's users scan the document image to quickly fill out forms.",
+            "Added AI powered data retrieval  system that allows business persons to quickly extract any data through prompt."
+        ]
+    },
+    {
         "title": "Inspiring Lab - AI/ML Intern",
         "date": "Nov 2024 - Feb 2025",
         "tasks": [

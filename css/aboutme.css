@@ -38,6 +38,9 @@
 }
 
 @media (max-width: 760px) {
+    #about-me-section{
+        min-height: 80vh;
+    }
     .about-me-img {
         display: none;
     }
@@ -56,6 +59,6 @@
     }
 
     #about-me-section .about-me-para {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 }
