@@ -169,8 +169,8 @@
     .my-intro .socials a{
         width: 10vw;
         height: 10vw;
-        min-width: 30px;
-        min-height: 30px;
+        min-width: 50px;
+        min-height: 50px;
     }
 
     .my-intro .down-cv-btn,
