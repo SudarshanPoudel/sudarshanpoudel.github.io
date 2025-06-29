@@ -22,7 +22,7 @@
 
 .skill-type-item {
   width: 70%;
-  height: 8vh;
+  height: 6vh;
   background: none;
   margin: 10px auto;
   font-size: 1rem;
@@ -55,7 +55,7 @@
 }
 
 .skills-details-box {
-  height: 50vh;
+  height: 40vh;
   width: 50vw;
   background-color: var(--text-color);
   display: flex;
@@ -70,17 +70,18 @@
   width: 45%;
   position: relative;
   display: flex;
-  height: 20%;
+  height: 30%;
 }
 
 .skill-name {
   color: var(--main-bg-color);
   position: absolute;
-  top: 0%;
+  top: 20%;
   height: 25%;
   animation: skill-name 0.4s ease-in-out forwards;
   width: max-content;
   text-align: left;
+  font-size: 1.2rem;
 }
 
 @keyframes skill-name {
@@ -91,10 +92,10 @@
 
 .bar {
   width: 100%;
-  height: 10%;
+  height: 12%;
   background-color: #8b8b8b;
   position: absolute;
-  bottom:40%;
+  top: 50%;
 }
 
 .skill-bar {
@@ -140,7 +141,7 @@
   right: 0;
   text-align: right;
   opacity: 0.8;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
   text-wrap: nowrap;
   font-style: italic;
